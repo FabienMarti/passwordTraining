@@ -24,7 +24,7 @@
             </div>
             <ul style="list-style: none">
                 <li id="charLength">Au moins 8 caractères</li>
-                <li>Au moins une lettre en majuscule</li>
+                <li id="upperCase">Au moins une lettre en majuscule</li>
                 <li id="lowerCase">Au moins une lettre en minuscule</li>
                 <li id="charNumber">Au moins un chiffre</li>
             </ul>
