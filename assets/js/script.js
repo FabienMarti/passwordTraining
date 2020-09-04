@@ -1,10 +1,13 @@
-upperCaseRegex = /^(?=.*[A-Z])$/;
+upperCaseRegex = /^(.*[A-Z].*)$/;
+lowerCaseRegex = /^(.*[a-z].*)$/;
+numberRegex = /^(.*[0-9].*)$/;
 
 
 function checkPasswordFormat(input) {
-    //checkPWlength(input);
+    checkPWlength(input);
     checkPWUppercase(input);
-   
+    checkPWlowercase(input);
+    checkPWnumber(input);
 }
 
 function checkPWlength(input) {
@@ -20,10 +23,37 @@ function checkPWlength(input) {
 }
 
 function checkPWUppercase(input) {
-    if (upperCaseRegex.test(input)) {
+    if (input.length == 0) {
+        document.getElementById('upperCase').style.color = 'black';
+    }
+    else if (upperCaseRegex.test(input)) {
         document.getElementById('upperCase').style.color = 'green';
-    } else {
+    }else{
         document.getElementById('upperCase').style.color = 'red';
     }
-    console.log(upperCaseRegex.test(input));
+    
+}
+
+function checkPWlowercase(input) {
+    if (input.length == 0) {
+        document.getElementById('lowerCase').style.color = 'black';
+    }
+    else if (lowerCaseRegex.test(input)) {
+        document.getElementById('lowerCase').style.color = 'green';
+    }else{
+        document.getElementById('lowerCase').style.color = 'red';
+    }
+    
+}
+
+function checkPWnumber(input) {
+    if (input.length == 0) {
+        document.getElementById('charNumber').style.color = 'black';
+    }
+    else if (numberRegex.test(input)) {
+        document.getElementById('charNumber').style.color = 'green';
+    }else{
+        document.getElementById('charNumber').style.color = 'red';
+    }
+    
 }
